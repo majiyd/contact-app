@@ -1,8 +1,10 @@
-In this simple project i'm just trying to figure out some things including
-1. React Router
+In this simple project, i'll be improving on my k
+nowledge of Redux. I'll make a simple contact list app.<br>
+  
+I'll be making use of
+1. React
 2. Redux
-3. Context
-4. Css Modules 
+3. Css Modules 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

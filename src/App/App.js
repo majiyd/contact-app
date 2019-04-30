@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import AppRouter from "./components/AppRouter";
 
 class App extends Component {
-	render() {
-		return (
-            <React.Fragment>
-                <AppRouter />
-            </React.Fragment>
-        );
-	}
+  render() {
+    return (
+      <React.Fragment>
+        <h1>Welcome To Contact App</h1>
+      </React.Fragment>
+    );
+  }
 }
 export default App;
