@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {PureComponent}from 'react';
 import ReactDOM from 'react-dom';
 import App from "./App/App"
-import './reset.css'
+import './css/reset.css'
 
-
+class Root extends PureComponent{
+  render(){
+    return(
+      <App/>
+    )
+  }
+}
 ReactDOM.render(
-    <App />, 
+    <Root />, 
   document.getElementById('root')
 );
