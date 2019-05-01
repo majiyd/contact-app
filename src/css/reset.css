@@ -5,6 +5,10 @@
   text-decoration: none;
   font-family:  'Arial Narrow Bold', sans-serif
 }
+body{
+  height: 100vh;
+  color: #0a010f
+}
 a{
   color: inherit;
 }

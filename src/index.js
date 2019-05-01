@@ -6,7 +6,7 @@ import './css/reset.css'
 class Root extends PureComponent{
   render(){
     return(
-      <App/>
+      <App />
     )
   }
 }
