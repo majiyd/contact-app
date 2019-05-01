@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import store from './redux/store'
 import App from "./App/App"
 import './css/reset.css'
+import {applyClickedOnAddContactLink} from './redux/actions/actionCreators/uiActionCreators'
 
 class Root extends PureComponent{
   render(){
-    console.log(store);
+    store.dispatch(applyClickedOnAddContactLink())
     return(
       <App />
     )

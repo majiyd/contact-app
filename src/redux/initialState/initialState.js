@@ -1,7 +1,10 @@
 const initialState = {
   contacts: {
     contactList: [],
-    newContact: {},
+    newContact: {
+      name: "",
+      phoneNumer: "",
+    },
   },
   ui:{
     pages: {
