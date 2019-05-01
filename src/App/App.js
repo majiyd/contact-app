@@ -3,7 +3,9 @@ import ContactsPage from '../containers/ContactsPage';
 import AddNewContact from '../containers/AddNewContact';
 import Navbar from '../containers/Navbar';
 
-
+/**
+ * @desc main App, all application pages are rendered here
+ */
 class App extends Component {
   render() {
     return (
