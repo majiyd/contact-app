@@ -1,0 +1,11 @@
+.link {
+  padding: 20px;
+  font-size: 42pt;
+  width: 50%;
+  display: inline-flex;
+}
+.active_link{
+  composes: link ;
+  background-color: blueviolet;
+  border-bottom: 4px solid #063ef311;
+}

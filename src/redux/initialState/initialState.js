@@ -1,8 +1,16 @@
 const initialState = {
-  contacts: [],
+  contacts: {
+    contactList: [],
+    newContact: {},
+  },
   ui:{
-    isContactsPageVisible: true,
-    isAddNewContactPageVisible: false
+    pages: {
+      isContactsPageVisible: true,
+      isAddNewContactPageVisible: false
+    },
+    links:{
+      isContactPageLinkActive: true,
+    }
   }
 }
 
