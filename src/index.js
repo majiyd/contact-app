@@ -1,5 +1,6 @@
 import React, {PureComponent}from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux'
 import store from './redux/store'
 import App from "./App/App"
 import './css/reset.css'
@@ -17,7 +18,9 @@ class Root extends PureComponent{
   render(){
     store.dispatch(applyClickedOnAddContactLink())
     return(
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     )
   }
 }

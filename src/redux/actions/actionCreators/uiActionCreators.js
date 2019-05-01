@@ -4,7 +4,7 @@ import * as actionTypes from '../actionTypes'
  */
 export function applyClickedOnAddContactLink(){
   /**
-   * @desc creates a CLICKED_ON_CONTACTS_PAGE_LINK
+   * @desc creates a CLICKED_ON_CONTACTS_PAGE_LINK action
    * @returns actionType, perhaps, a payload
    */
   return {
