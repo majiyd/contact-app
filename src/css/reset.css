@@ -7,8 +7,11 @@
 }
 body{
   height: 100vh;
-  color: #190225;
-  background-color: currentColor;
+  color: #070605;
+  background-color: #ebf1f4;
+}
+h1{
+  font-size: 1.7rem;
 }
 a{
   color: inherit;

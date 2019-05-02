@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Navbar />
-        <h1 className={[textStyles.white, textStyles.center].join(' ')}>Welcome To Contact App</h1>
+        <h1 className={ textStyles.center}>Welcome To Contact App</h1>
         <Container>
           {this.props.isContactsPageVisible ? 
             <ContactsPage /> : <AddNewContact />
