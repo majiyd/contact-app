@@ -15,6 +15,8 @@ export default function uiReducer(state = initialState.ui, action) {
         ...state, links:{
           ...state.links,
           isContactPageLinkActive: true
+        }, pages:{
+          ...state.pages, isContactsPageVisible: true
         }
       };
     }
@@ -23,6 +25,8 @@ export default function uiReducer(state = initialState.ui, action) {
         ...state, links: {
           ...state.links, 
           isContactPageLinkActive: false
+        }, pages:{
+          ...state.pages, isContactsPageVisible: false
         }
       }
     }

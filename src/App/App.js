@@ -7,7 +7,7 @@ import Navbar from '../containers/Navbar';
 
 function mapStateToProps(state){
   return{
-    isContactsPageVisible: state.pages.isContactsPageVisible
+    isContactsPageVisible: state.ui.pages.isContactsPageVisible
   }
 }
 /**
@@ -19,8 +19,9 @@ class App extends Component {
       <React.Fragment>
         <Navbar />
         <h1>Welcome To Contact App</h1>
-        <ContactsPage />
-        <AddNewContact />
+        {this.props.isContactsPageVisible ? 
+          <ContactsPage /> : <AddNewContact />
+        }
       </React.Fragment>
     );
   }
