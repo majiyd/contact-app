@@ -4,6 +4,7 @@ import Container from '../containers/Container'
 import ContactsPage from '../containers/ContactsPage';
 import AddNewContact from '../containers/AddNewContact';
 import Navbar from '../containers/Navbar';
+import textStyles from '../css/components/Text.module.css'
 
 
 function mapStateToProps(state){
@@ -19,7 +20,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Navbar />
-        <h1>Welcome To Contact App</h1>
+        <h1 className={[textStyles.white, textStyles.center].join(' ')}>Welcome To Contact App</h1>
         <Container>
           {this.props.isContactsPageVisible ? 
             <ContactsPage /> : <AddNewContact />
