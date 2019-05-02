@@ -13,13 +13,19 @@ export default function uiReducer(state = initialState.ui, action) {
     case actionTypes.CLICK_ON_CONTACTS_PAGE_LINK: {
       console.log("clicked on CONTACT PAGE");
       return {
-        ...state
+        ...state, links:{
+          ...state.links,
+          isContactPageLinkActive: true
+        }
       };
     }
     case actionTypes.CLICK_ON_ADD_CONTACT_LINK:{
       console.log('clicked on add new contact')
       return{
-        ...state
+        ...state, links: {
+          ...state.links, 
+          isContactPageLinkActive: false
+        }
       }
     }
     default:
