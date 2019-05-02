@@ -1,8 +1,15 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux'
 import ContactsPage from '../containers/ContactsPage';
 import AddNewContact from '../containers/AddNewContact';
 import Navbar from '../containers/Navbar';
 
+
+function mapStateToProps(state){
+  return{
+    isContactsPageVisible: state.pages.isContactsPageVisible
+  }
+}
 /**
  * @desc main App, all application pages are rendered here
  */
@@ -18,4 +25,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default connect(mapStateToProps)(App);

@@ -9,7 +9,6 @@ const initialState = {
   ui:{
     pages: {
       isContactsPageVisible: true,
-      isAddNewContactPageVisible: false
     },
     links:{
       isContactPageLinkActive: true,
