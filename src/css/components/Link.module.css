@@ -3,9 +3,14 @@
   font-size: 42pt;
   width: 50%;
   display: inline-flex;
+  
+}
+.link > span{
+  cursor: pointer;
 }
 .active_link{
   composes: link ;
   background-color: blueviolet;
-  border-bottom: 4px solid #063ef311;
+  color: white;
+  border-bottom: 4px solid #3a1574;
 }

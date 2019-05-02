@@ -4,7 +4,7 @@ import {Provider} from 'react-redux'
 import store from './redux/store'
 import App from "./App/App"
 import './css/reset.css'
-import {applyClickedOnAddContactLink} from './redux/actions/actionCreators/uiActionCreators'
+
 
 /**
  * @desc This is the entry point of the app, it contains the root container.
@@ -16,7 +16,6 @@ class Root extends PureComponent{
    * @returns App container
    */
   render(){
-    store.dispatch(applyClickedOnAddContactLink())
     return(
       <Provider store={store}>
         <App />
