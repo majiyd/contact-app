@@ -1,8 +1,10 @@
 .link {
   padding: 20px;
-  font-size: 42pt;
-  width: 50%;
+  font-size: 24pt;
+  width: 100%;
   display: inline-flex;
+  background-color: white;
+  border-bottom: 4px solid #3a1574;
   
 }
 .link > span{
@@ -12,5 +14,10 @@
   composes: link ;
   background-color: blueviolet;
   color: white;
-  border-bottom: 4px solid #3a1574;
+ 
+}
+@media (min-width: 767px){
+  .link{
+    width: 50%;
+  }
 }

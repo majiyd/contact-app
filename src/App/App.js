@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux'
+import Container from '../containers/Container'
 import ContactsPage from '../containers/ContactsPage';
 import AddNewContact from '../containers/AddNewContact';
 import Navbar from '../containers/Navbar';
@@ -19,9 +20,11 @@ class App extends Component {
       <React.Fragment>
         <Navbar />
         <h1>Welcome To Contact App</h1>
-        {this.props.isContactsPageVisible ? 
-          <ContactsPage /> : <AddNewContact />
-        }
+        <Container>
+          {this.props.isContactsPageVisible ? 
+            <ContactsPage /> : <AddNewContact />
+          }
+        </Container>
       </React.Fragment>
     );
   }

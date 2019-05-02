@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import {connect} from 'react-redux'
 import  Link  from '../components/Link';
 import {clickOnAddContactLink, clickOnContactsPageLink} from '../redux/actions/actionCreators/uiActionCreators'
+import navbarStyles from '../css/containers/Navbar.module.css'
 
 function mapStateToProps(state){
   return{
@@ -21,7 +22,7 @@ class Navbar extends PureComponent {
   }
   render() {
     return (
-      <div>
+      <div className={navbarStyles.nav}>
         <Link isActive={this.props.isContactPageLinkActive}>
           <span onClick={this.handleClickOnContactsPageLink}>Contacts</span>
         </Link>
