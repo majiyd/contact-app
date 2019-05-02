@@ -2,12 +2,17 @@ import * as actionTypes from '../actionTypes'
 /**
  * action creators makes it easier to call and dispatch action types
  */
-export function applyClickedOnAddContactLink(){
+export function clickOnAddContactLink(){
   /**
    * @desc creates a CLICKED_ON_CONTACTS_PAGE_LINK action
    * @returns actionType, perhaps, a payload
    */
   return {
-    type: actionTypes.CLICKED_ON_CONTACTS_PAGE_LINK
+    type: actionTypes.CLICK_ON_ADD_CONTACT_LINK
+  }
+}
+export function clickOnContactsPageLink(){
+  return{
+    type: actionTypes.CLICK_ON_CONTACTS_PAGE_LINK
   }
 }

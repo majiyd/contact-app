@@ -10,11 +10,17 @@ import * as actionTypes from "../actions/actionTypes";
  */
 export default function uiReducer(state = initialState.ui, action) {
   switch (action.type) {
-    case actionTypes.CLICKED_ON_CONTACTS_PAGE_LINK: {
-      console.log("clicked on Link");
+    case actionTypes.CLICK_ON_CONTACTS_PAGE_LINK: {
+      console.log("clicked on CONTACT PAGE");
       return {
         ...state
       };
+    }
+    case actionTypes.CLICK_ON_ADD_CONTACT_LINK:{
+      console.log('clicked on add new contact')
+      return{
+        ...state
+      }
     }
     default:
       return state;

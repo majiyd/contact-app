@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import {connect} from 'react-redux'
 import  Link  from '../components/Link';
-import {applyClickedOnAddContactLink} from '../redux/actions/actionCreators/uiActionCreators'
+import {clickOnAddContactLink, clickOnContactsPageLink} from '../redux/actions/actionCreators/uiActionCreators'
 
 function mapStateToProps(state){
   return{
@@ -9,17 +9,21 @@ function mapStateToProps(state){
   }
 }
 const mapDispatchToProps = {
-  applyClickedOnAddContactLink,
+  clickOnAddContactLink, 
+  clickOnContactsPageLink,
 }
 class Navbar extends PureComponent {
   handleClickOnAddContactLink = ()=>{
-    this.props.applyClickedOnAddContactLink()
+    this.props.clickOnAddContactLink()
+  }
+  handleClickOnContactsPageLink = () => {
+    this.props.clickOnContactsPageLink()
   }
   render() {
     return (
       <div>
         <Link isActive={this.props.isContactPageLinkActive}>
-          <span onClick={this.handleClickOnAddContactLink}>Contacts</span>
+          <span onClick={this.handleClickOnContactsPageLink}>Contacts</span>
         </Link>
         <Link isActive={!this.props.isContactPageLinkActive}>
           <span onClick={this.handleClickOnAddContactLink}>Add New Contact</span>
