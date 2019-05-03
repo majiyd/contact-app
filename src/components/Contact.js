@@ -7,7 +7,7 @@ class Contact extends PureComponent {
     return (
       <div className={styles.contact}>
         <DeleteContact/>
-        <div>Suleiman 08041933357</div>  
+        <div style={{margin: "auto 0"}}>Suleiman - 08041933357</div>  
       </div>
     );
   }

@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
+import styles from '../css/components/Contact.module.css'
 
 class DeleteContact extends PureComponent {
   render() {
     return (
-      <div>X</div>
+      <div className={styles.delete_contact}>X</div>
     );
   }
 }
