@@ -1,3 +1,15 @@
 .contact{
   display: flex;
+  margin-top: 7px;
+  padding: 5px;
+  background: linear-gradient(95deg,#6b358f 75%,#b47cc4); 
+  color: white;
+  font-size: 16pt;
+  border-radius:2px 2px 15px 2px;
+  border-bottom: 2px solid #b47cc4;
+  border-right: 2px solid #b47cc4;
+  box-shadow: 0px 1px 4px #6b358f93
+}
+.contact:nth-child(2){
+  margin-top: 35px;
 }

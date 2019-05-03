@@ -6,7 +6,13 @@ class ContactsPage extends PureComponent {
   render() {
     return (
       <React.Fragment>
-        <h1 className={textStyles.center}>Contacts</h1>
+        <h1 className={[
+          textStyles.center, 
+          textStyles.section_heading
+          ].join(' ')
+        }>
+          Contacts
+        </h1>
         <Contact />
         <Contact />
         <Contact />
