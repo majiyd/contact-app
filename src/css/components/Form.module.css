@@ -1,0 +1,26 @@
+.form{
+  margin: 7% auto;
+  width: 100%;
+  max-width: 450px;
+  padding: 10% 3% 13% 3%;
+  position: relative;
+}
+.input{
+  width: 100%;
+  padding: 6px;
+  font-size: large;
+  margin-bottom: 25px;
+  border: 0;
+  border-bottom: 4px solid white;
+  color: #070605 ;
+}
+.input::placeholder{
+  color: #999794 ;
+}
+
+.input:focus{
+  outline: unset;
+  border-color: blueviolet;
+  background-color: white;
+  transition: border-color .8s
+}

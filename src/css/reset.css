@@ -3,12 +3,15 @@
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family:  'Arial Narrow Bold', sans-serif
+  font-family:  -apple-system,BlinkMacSystemFont,segoe ui,roboto,oxygen,cantarell,helvetica neue,ubuntu,sans-serif;
 }
 body{
   height: 100vh;
   color: #070605;
   background-color: #ebf1f4;
+  background: url(https://images.unsplash.com/photo-1505699261378-c372af38134c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 h1{
   font-size: 1.7rem;
@@ -19,6 +22,8 @@ a{
 button{
   border: none;
 }
+button:active,
+input:focus,
 button:focus{
   outline: none
 }

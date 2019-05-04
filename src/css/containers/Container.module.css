@@ -1,9 +1,15 @@
 .container{
   width: 96%;
-  max-width: 700px;
+  max-width: 500px;
   margin: 5% auto;
   padding: 3%;
-  background-color: white;
+  padding-bottom: 40px;
+  background-color: #070605a6;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 3px 0 rgba(140, 119, 191, 0.19);
-  min-height: 500px;
+}
+
+@media (min-width: 1023px){
+  .container{
+    margin-top: 3%;
+  }
 }

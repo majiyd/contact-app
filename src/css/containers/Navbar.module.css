@@ -2,3 +2,8 @@
   box-shadow: 2px 4px 5px 3px #2332;
   margin-bottom: 5%;
 }
+@media (min-width: 1023px){
+  .nav{
+    margin-bottom: 3%;
+  }
+}
