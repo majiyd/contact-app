@@ -11,16 +11,19 @@
   font-size: large;
   margin-bottom: 25px;
   border: 0;
-  border-bottom: 4px solid white;
+  border-bottom: 3px solid white;
   color: #070605 ;
 }
 .input::placeholder{
   color: #999794 ;
+}
+.input:placeholder-shown{
+  background-color: transparent;
 }
 
 .input:focus{
   outline: unset;
   border-color: blueviolet;
   background-color: white;
-  transition: border-color .8s
+  transition: .8s
 }
