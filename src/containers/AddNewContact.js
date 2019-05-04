@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import {connect} from 'react-redux'
-import {inputContactName, inputContactNumber} from '../redux/actions/actionCreators/contactActionCreators'
+import {inputContactName, inputContactNumber, addNewContact} from '../redux/actions/actionCreators/contactActionCreators'
 import textStyles from '../css/components/Text.module.css'
 import formStyles from '../css/components/Form.module.css'
 import buttonStyles from '../css/components/Button.module.css'
@@ -10,7 +10,8 @@ function mapStateToProps(){
 }
 const mapDispatchToProps = {
   inputContactName,
-  inputContactNumber
+  inputContactNumber,
+  addNewContact
 }
 class AddNewContact extends PureComponent {
   handleInputContactName = (e) => {
@@ -20,6 +21,10 @@ class AddNewContact extends PureComponent {
   handleInputContactNumber = (e) => {
     let value = e.target.value
     this.props.inputContactNumber(value)
+  }
+  handleAddNewContact = (e) => {
+    e.preventDefault()
+    this.props.addNewContact()
   }
   render() {
     return (
@@ -44,7 +49,7 @@ class AddNewContact extends PureComponent {
             required
             onInput={this.handleInputContactNumber}
           />
-          <button className={buttonStyles.form_button}>Add Contact</button>
+          <button onClick={this.handleAddNewContact} className={buttonStyles.form_button}>Add Contact</button>
         </form>
       </React.Fragment>
     );

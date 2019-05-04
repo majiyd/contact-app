@@ -12,3 +12,8 @@ export function inputContactNumber(value){
     payload: value
   }
 }
+export function addNewContact(){
+  return{
+    type: actionTypes.ADD_NEW_CONTACT
+  }
+}
