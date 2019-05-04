@@ -1,12 +1,14 @@
 import * as actionTypes from '../actionTypes'
 
-export function inputContactName(){
+export function inputContactName(value){
   return{
-    type: actionTypes.INPUT_CONTACT_NAME
+    type: actionTypes.INPUT_CONTACT_NAME,
+    payload: value
   }
 }
-export function inputContactNumber(){
+export function inputContactNumber(value){
   return{
-    type: actionTypes.INPUT_CONTACT_NUMBER
+    type: actionTypes.INPUT_CONTACT_NUMBER,
+    payload: value
   }
 }

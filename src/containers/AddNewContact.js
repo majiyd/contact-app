@@ -6,18 +6,20 @@ import formStyles from '../css/components/Form.module.css'
 import buttonStyles from '../css/components/Button.module.css'
 
 function mapStateToProps(){
-
+  return{}
 }
 const mapDispatchToProps = {
   inputContactName,
   inputContactNumber
 }
 class AddNewContact extends PureComponent {
-  handleInputContactName = () => {
-    this.props.inputContactName()
+  handleInputContactName = (e) => {
+    let value = e.target.value
+    this.props.inputContactName(value)
   }
-  handleInputContactNumber = () => {
-    this.props.inputContactNumber()
+  handleInputContactNumber = (e) => {
+    let value = e.target.value
+    this.props.inputContactNumber(value)
   }
   render() {
     return (
@@ -36,7 +38,7 @@ class AddNewContact extends PureComponent {
             required
             onInput={this.handleInputContactName}
           />
-          <input 
+          <input
             className={formStyles.input} 
             placeholder='Number:'
             required

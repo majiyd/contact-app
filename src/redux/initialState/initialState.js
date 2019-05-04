@@ -3,7 +3,7 @@ const initialState = {
     contactList: [],
     newContact: {
       name: "",
-      phoneNumer: "",
+      phoneNumber: "",
     },
   },
   ui:{
