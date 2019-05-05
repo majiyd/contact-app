@@ -16,7 +16,8 @@ class NotificationDock extends PureComponent {
         {this.props.notifications.map(
           (notification)=>(
             <Notification 
-              key={notification.id} 
+              key={notification.id}
+              id={notification.id}
               type={notification.type} 
               message={notification.message}
             />

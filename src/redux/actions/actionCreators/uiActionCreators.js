@@ -16,3 +16,9 @@ export function clickOnContactsPageLink(){
     type: actionTypes.CLICK_ON_CONTACTS_PAGE_LINK
   }
 }
+export function deleteNotification(id){
+  return{
+    type: actionTypes.DELETE_NOTIFICATION,
+    payload: id
+  }
+}

@@ -4,6 +4,7 @@ export const ADD_NEW_CONTACT = "ADD_NEW_CONTACT"
 export const DELETE_CONTACT = "DELETE_CONTACT"
 export const INPUT_CONTACT_NAME = "INPUT_CONTACT_NAME"
 export const INPUT_CONTACT_NUMBER = "INPUT_CONTACT_NUMBER"
+export const DELETE_NOTIFICATION = "DELETE_NOTIFICATION"
 
 /**
  * actiontypes makes it easier to define and use actions. It is convention to use all caps.

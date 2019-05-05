@@ -30,6 +30,12 @@ export default function uiReducer(state = initialState.ui, action) {
         }
       }
     }
+    case actionTypes.DELETE_NOTIFICATION:{
+      console.log('deleted notice', action.payload)
+      return{
+        ...state
+      }
+    }
     default:
       return state;
   }
