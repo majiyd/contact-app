@@ -3,6 +3,7 @@ import styles from '../css/components/Notification.module.css'
 
 class Notification extends PureComponent {
   componentDidMount(){
+    console.log('mounted')
     this.interval = setTimeout(() => console.log('deleting'), 5000);
   }
   componentWillUnmount() {
