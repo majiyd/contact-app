@@ -2,6 +2,12 @@ import React, { PureComponent } from 'react';
 import styles from '../css/components/Notification.module.css'
 
 class Notification extends PureComponent {
+  componentDidMount(){
+    this.interval = setTimeout(() => console.log('deleting'), 5000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
   render() {
     switch(this.props.type){
       case 'success':{

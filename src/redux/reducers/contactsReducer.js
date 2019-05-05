@@ -15,6 +15,7 @@ export default function contactsReducer(state=initialState.contacts, action){
       }
     }
     case actionTypes.INPUT_CONTACT_NAME:{
+      console.log(uniqid('notification-'))
       return {
         ...state, newContact:{
           ...state.newContact, name: action.payload
