@@ -25,6 +25,8 @@ class AddNewContact extends PureComponent {
   handleAddNewContact = (e) => {
     e.preventDefault()
     this.props.addNewContact()
+    document.getElementById('inputContactName').value = ''
+    document.getElementById('inputContactNumber').value = ''
   }
   render() {
     return (
@@ -37,13 +39,15 @@ class AddNewContact extends PureComponent {
           Add New Contact
         </h1>
         <form className={formStyles.form}>
-          <input 
+          <input
+            id='inputContactName' 
             className={formStyles.input} 
             placeholder='Name:'
             required
             onInput={this.handleInputContactName}
           />
           <input
+            id='inputContactNumber'
             className={formStyles.input} 
             placeholder='Number:'
             required

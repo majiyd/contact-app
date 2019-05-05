@@ -4,6 +4,7 @@ import Container from '../containers/Container'
 import ContactsPage from '../containers/ContactsPage';
 import AddNewContact from '../containers/AddNewContact';
 import Navbar from '../containers/Navbar';
+import NotificationDock from '../containers/NotificationDock'
 import textStyles from '../css/components/Text.module.css'
 
 
@@ -20,6 +21,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Navbar />
+        <NotificationDock />
         <h1 className={ textStyles.center}>Welcome To Contact App</h1>
         <Container>
           {this.props.isContactsPageVisible ? 

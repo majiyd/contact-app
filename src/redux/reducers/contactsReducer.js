@@ -15,7 +15,6 @@ export default function contactsReducer(state=initialState.contacts, action){
       }
     }
     case actionTypes.INPUT_CONTACT_NAME:{
-      console.log(state)
       return {
         ...state, newContact:{
           ...state.newContact, name: action.payload
