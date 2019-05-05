@@ -31,9 +31,11 @@ export default function uiReducer(state = initialState.ui, action) {
       }
     }
     case actionTypes.DELETE_NOTIFICATION:{
-      console.log('deleted notice', action.payload)
+      console.log(state.notifications)
+      let notifications = state.notifications.filter(notification => notification.id !== action.payload)
+      console.log(notifications)
       return{
-        ...state
+        ...state, notifications: notifications
       }
     }
     default:
