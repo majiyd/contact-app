@@ -1,12 +1,19 @@
 import React, { PureComponent } from 'react';
 import {connect} from 'react-redux'
-import {inputContactName, inputContactNumber, addNewContact} from '../redux/actions/actionCreators/contactActionCreators'
+import {
+  inputContactName,
+  inputContactNumber,
+  addNewContact
+} from "../redux/actions/actionCreators/contactActionCreators";
 import textStyles from '../css/components/Text.module.css'
 import formStyles from '../css/components/Form.module.css'
 import buttonStyles from '../css/components/Button.module.css'
 
-function mapStateToProps(){
-  return{}
+function mapStateToProps(state){
+  return{
+    newContactName: state.contacts.newContact.name,
+    newContactNumber: state.contacts.newContact.phoneNumber,
+  }
 }
 const mapDispatchToProps = {
   inputContactName,
@@ -23,10 +30,22 @@ class AddNewContact extends PureComponent {
     this.props.inputContactNumber(value)
   }
   handleAddNewContact = (e) => {
-    e.preventDefault()
-    this.props.addNewContact()
-    document.getElementById('inputContactName').value = ''
-    document.getElementById('inputContactNumber').value = ''
+    //some client side validation,
+    //not recommended in real life
+    let newContactName = document.getElementById('inputContactName').value.trim()
+    let newContactNumber = document.getElementById('inputContactNumber').value.trim()
+    
+    if(newContactNumber === '' ){
+      document.getElementById('inputContactNumber').value = ''
+    }else if(newContactName === ''){
+      document.getElementById('inputContactName').value = ''
+    }else{
+      e.preventDefault()
+      this.props.addNewContact()
+      document.getElementById('inputContactName').value = ''
+      document.getElementById('inputContactNumber').value = ''
+    }
+    
   }
   render() {
     return (
