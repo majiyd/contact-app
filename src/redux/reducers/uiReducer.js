@@ -1,5 +1,6 @@
 import initialState from "../initialState/initialState";
 import * as actionTypes from "../actions/actionTypes";
+import uniqid from 'uniqid'
 
 /**
  * @desc a reducer is a pure function that determines the new state of the application based on the previous state and an action
@@ -30,10 +31,22 @@ export default function uiReducer(state = initialState.ui, action) {
         }
       }
     }
+    case actionTypes.SEND_NOTIFICATION:{
+      const newNotification = {
+        id: uniqid('notification-'),
+        type: action.payload.type,
+        message: action.payload.message,
+      }
+      return{
+        ...state, notifications:[
+          ...state.notifications, newNotification
+        ],
+      }
+    }
     case actionTypes.DELETE_NOTIFICATION:{
-      console.log(state.notifications)
-      let notifications = state.notifications.filter(notification => notification.id !== action.payload)
-      console.log(notifications)
+      let notifications = state.notifications.filter(
+        notification => notification.id !== action.payload
+      );
       return{
         ...state, notifications: notifications
       }

@@ -22,3 +22,13 @@ export function deleteNotification(id){
     payload: id
   }
 }
+
+export function sendNotification(type, message){
+  return{
+    type: actionTypes.SEND_NOTIFICATION,
+    payload: {
+      type: type,
+      message: message,
+    }
+  }
+}

@@ -5,6 +5,7 @@ import {
   inputContactNumber,
   addNewContact
 } from "../redux/actions/actionCreators/contactActionCreators";
+import {sendNotification} from "../redux/actions/actionCreators/uiActionCreators";
 import textStyles from '../css/components/Text.module.css'
 import formStyles from '../css/components/Form.module.css'
 import buttonStyles from '../css/components/Button.module.css'
@@ -18,7 +19,8 @@ function mapStateToProps(state){
 const mapDispatchToProps = {
   inputContactName,
   inputContactNumber,
-  addNewContact
+  addNewContact,
+  sendNotification,
 }
 class AddNewContact extends PureComponent {
   handleInputContactName = (e) => {
@@ -42,6 +44,7 @@ class AddNewContact extends PureComponent {
     }else{
       e.preventDefault()
       this.props.addNewContact()
+      this.props.sendNotification('success', `Contact ${newContactName} successfully added!`)
       document.getElementById('inputContactName').value = ''
       document.getElementById('inputContactNumber').value = ''
     }
