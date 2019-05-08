@@ -12,21 +12,25 @@ class ContactsPage extends PureComponent {
   render() {
     return (
       <React.Fragment>
-        <h1 className={[
-          textStyles.center, 
-          textStyles.section_heading
-          ].join(' ')
-        }>
+        <h1
+          className={[textStyles.center, textStyles.section_heading].join(
+            " "
+          )}
+        >
           Contacts
         </h1>
-        {this.props.contacts.map((contact) => (
-          <Contact 
-            key={contact.id}
-            id={contact.id}
-            name={contact.name}
-            number={contact.number}
-          />
-        ))}
+        {(!Array.isArray( this.props.contacts) ||  !this.props.contacts.length) ? (
+          <h1 className={[textStyles.center, textStyles.no_contact].join(" ")}>No Contacts Added!</h1>
+        ) : (
+          this.props.contacts.map(contact => (
+            <Contact
+              key={contact.id}
+              id={contact.id}
+              name={contact.name}
+              number={contact.number}
+            />
+          ))
+        )}
       </React.Fragment>
     );
   }
