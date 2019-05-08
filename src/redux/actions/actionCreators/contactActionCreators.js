@@ -17,3 +17,9 @@ export function addNewContact(){
     type: actionTypes.ADD_NEW_CONTACT
   }
 }
+export function deleteContact(id){
+  return{
+    type: actionTypes.DELETE_CONTACT,
+    payload: id,
+  }
+}
