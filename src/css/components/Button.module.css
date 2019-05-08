@@ -10,10 +10,11 @@
   cursor: pointer;
   overflow: hidden;
   position: relative;
+  transition: 0.7s;
 }
 
 .form_button:hover{
-  box-shadow: 0px 2px 3px 1px rgba(0, 1, 0, 0.37);
+  box-shadow: 0px 2px 3px 1px rgba(134, 124, 133, 0.37);
   background: linear-gradient(135deg, blueviolet 52%, violet);
   transition: all 0.7s;
 }

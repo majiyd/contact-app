@@ -1,6 +1,22 @@
 const initialState = {
   contacts: {
-    contactList: [],
+    contactList: [
+      {
+        id: 'contact-jvehzf6m',
+        name: 'Suleiman',
+        number: '23422988',
+      },
+      {
+        id: 'contact-jvehzyu9',
+        name: 'Johann',
+        number: '032437465',
+      },
+      {
+        id: 'contact-jvei0dd6',
+        name: 'davidson',
+        number: '273-456-234',
+      },
+    ],
     newContact: {
       name: "",
       phoneNumber: "",
@@ -8,18 +24,12 @@ const initialState = {
   },
   ui:{
     pages: {
-      isContactsPageVisible: false,
+      isContactsPageVisible: true,
     },
     links:{
-      isContactPageLinkActive: false,
+      isContactPageLinkActive: true,
     },
-    notifications: [
-      {
-        id: 'notification-jvbe9dbp',
-        type: 'success',
-        message: 'Contact added successfully!',
-      },
-    ],
+    notifications: [],
   }
 }
 

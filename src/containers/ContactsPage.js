@@ -1,7 +1,13 @@
 import React, { PureComponent } from 'react';
+import {connect} from 'react-redux'
 import Contact from '../components/Contact'
 import textStyles from '../css/components/Text.module.css'
 
+function mapStateToProps(state){
+  return{
+    contacts: state.contacts.contactList,
+  }
+}
 class ContactsPage extends PureComponent {
   render() {
     return (
@@ -13,13 +19,17 @@ class ContactsPage extends PureComponent {
         }>
           Contacts
         </h1>
-        <Contact />
-        <Contact />
-        <Contact />
-        <Contact />
+        {this.props.contacts.map((contact) => (
+          <Contact 
+            key={contact.id}
+            id={contact.id}
+            name={contact.name}
+            number={contact.number}
+          />
+        ))}
       </React.Fragment>
     );
   }
 }
 
-export default ContactsPage;
+export default connect(mapStateToProps)(ContactsPage);
