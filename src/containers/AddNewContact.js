@@ -43,7 +43,7 @@ class AddNewContact extends PureComponent {
       document.getElementById('inputContactName').value = ''
     }else{
       e.preventDefault()
-      this.props.addNewContact()
+      this.props.addNewContact(newContactName, newContactNumber)
       this.props.sendNotification('success', `Contact ${newContactName} successfully added!`)
       document.getElementById('inputContactName').value = ''
       document.getElementById('inputContactNumber').value = ''

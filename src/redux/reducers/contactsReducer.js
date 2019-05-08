@@ -6,16 +6,15 @@ export default function contactsReducer(state=initialState.contacts, action){
   switch(action.type){
     case actionTypes.ADD_NEW_CONTACT:{
       let newContact = {
-        newContactName : state.newContact.name,
-        newContactNumber : state.newContact.phoneNumber,
-        newContactUniqueId : uniqid('contact-')
+        name: action.payload.name,
+        phoneNumber: action.payload.number,
+        id: uniqid('contact-')
       }
       return {
         ...state, contactList: [...state.contactList, newContact]
       }
     }
     case actionTypes.DELETE_CONTACT:{
-      console.log('deleting',state)
       let newContactList = state.contactList.filter(
         contact => contact.id !== action.payload
       )

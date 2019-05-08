@@ -12,9 +12,13 @@ export function inputContactNumber(value){
     payload: value
   }
 }
-export function addNewContact(){
+export function addNewContact(name, number){
   return{
-    type: actionTypes.ADD_NEW_CONTACT
+    type: actionTypes.ADD_NEW_CONTACT,
+    payload: {
+      name: name,
+      number: number,
+    }
   }
 }
 export function deleteContact(id){
