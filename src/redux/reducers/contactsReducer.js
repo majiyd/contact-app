@@ -4,6 +4,29 @@ import uniqid from 'uniqid'
 
 export default function contactsReducer(state=initialState.contacts, action){
   switch(action.type){
+    case actionTypes.FETCH_CONTACTS_BEGIN:{
+      return {
+        ...state, 
+        isFetching: true,
+        errorFetching: null
+      }
+    }
+    //fetch contact reducers
+    case actionTypes.FETCH_CONTACTS_SUCCESS:{
+      return {
+        ...state,
+        isFetching: false,
+        errorFetching: null,
+        contacts: action.payload
+      }
+    }
+    case actionTypes.FETCH_CONTACTS_FAILURE:{
+      return {
+        ...state,
+        isFetching: false,
+        errorFetching: action.payload
+      }
+    }
     case actionTypes.ADD_NEW_CONTACT:{
       let newContact = {
         name: action.payload.name,
