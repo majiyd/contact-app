@@ -13,15 +13,20 @@
 }
 .bouncing_dot{
   border-radius: 50%;
+  position: relative;
+  bottom: 0;
+  animation: bounce infinite 1.5s ease-in-out;
 }
 .bouncing_dot:nth-child(1){
-  background: linear-gradient(#aa0baf, #ca5bce)
+  background: linear-gradient(#aa0baf, #a54c6e)
 }
 .bouncing_dot:nth-child(2){
-  background: linear-gradient(#f50c95, #d468b0)
+  background: linear-gradient(#f50c95, #d468b0);
+  animation-delay: .5s;
 }
 .bouncing_dot:nth-child(3){
-  background: linear-gradient(#e92a2a, rgb(255, 0, 179))
+  background: linear-gradient(#e92a2a, rgb(255, 0, 179));
+  animation-delay: .95s;
 }
 .loader_large .bouncing_dot{
   width: 30px;
@@ -32,10 +37,21 @@
 .loader_medium .bouncing_dot{
   width: 20px;
   height: 20px;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 .loader_small .bouncing_dot{
   width: 4px;
   height: 4px;
   margin-right: 3px;
+}
+@keyframes bounce{
+  0%{
+    bottom: 0;
+  }
+  50%{
+    bottom: 4px;
+  }
+  100%{
+    bottom: 0;
+  }
 }
