@@ -1,0 +1,41 @@
+.loader{
+  display: flex;
+  justify-content: center;
+}
+.loader_large {
+  composes: loader;
+}
+.loader_medium {
+  composes: loader;
+}
+.loader_small {
+  composes: loader;
+}
+.bouncing_dot{
+  border-radius: 50%;
+}
+.bouncing_dot:nth-child(1){
+  background: linear-gradient(#aa0baf, #ca5bce)
+}
+.bouncing_dot:nth-child(2){
+  background: linear-gradient(#f50c95, #d468b0)
+}
+.bouncing_dot:nth-child(3){
+  background: linear-gradient(#e92a2a, rgb(255, 0, 179))
+}
+.loader_large .bouncing_dot{
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  
+}
+.loader_medium .bouncing_dot{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.loader_small .bouncing_dot{
+  width: 4px;
+  height: 4px;
+  margin-right: 3px;
+}

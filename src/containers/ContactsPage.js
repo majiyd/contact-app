@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import {connect} from 'react-redux'
 import Contact from '../components/Contact'
+import Loader from '../components/Loader'
 import textStyles from '../css/components/Text.module.css'
 
 function mapStateToProps(state){
@@ -20,7 +21,13 @@ class ContactsPage extends PureComponent {
           Contacts
         </h1>
         {(!Array.isArray( this.props.contacts) ||  !this.props.contacts.length) ? (
-          <h1 className={[textStyles.center, textStyles.no_contact].join(" ")}>No Contacts Added!</h1>
+          /* <h1 className={[textStyles.center, textStyles.no_contact].join(" ")}>No Contacts Added!</h1> */ 
+
+          <>
+            <Loader type='large'/>
+            <Loader />
+            <Loader type='small'/>
+          </>
         ) : (
           this.props.contacts.map(contact => (
             <Contact

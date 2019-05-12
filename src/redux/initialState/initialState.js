@@ -8,10 +8,10 @@ const initialState = {
   },
   ui:{
     pages: {
-      isContactsPageVisible: false,
+      isContactsPageVisible: true,
     },
     links:{
-      isContactPageLinkActive: false,
+      isContactPageLinkActive: true,
     },
     notifications: [],
   }
