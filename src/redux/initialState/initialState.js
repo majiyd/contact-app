@@ -1,5 +1,7 @@
 const initialState = {
   contacts: {
+    isFetching: false,
+    errorFetching: null,
     contactList: [],
     newContact: {
       name: "",
