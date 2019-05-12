@@ -27,3 +27,22 @@ export function deleteContact(id){
     payload: id,
   }
 }
+
+//fetch contacts action creators
+export function fetchContactsBegin(){
+  return{
+    type: actionTypes.FETCH_CONTACTS_BEGIN
+  }
+}
+export function fetchContactsSuccess(contacts){
+  return{
+    type: actionTypes.FETCH_CONTACTS_SUCCESS,
+    payload: contacts,
+  }
+}
+export function fetchContactsFailure(error){
+  return{
+    type: actionTypes.FETCH_CONTACTS_FAILURE,
+    payload: error,
+  }
+}
