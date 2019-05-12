@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 To get the code, clone the repo <br>
 ```
-git clone https://github.com/majiyd/React-Router-Redux-Context.git
+git clone https://github.com/majiyd/contact-app.git
 ```
 then run  
 ```
