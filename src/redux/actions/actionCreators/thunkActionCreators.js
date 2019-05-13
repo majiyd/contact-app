@@ -1,4 +1,5 @@
 import { fetchContactsBegin, fetchContactsSuccess, fetchContactsFailure } from "./contactActionCreators";
+import {sendNotification} from './uiActionCreators'
 import * as api from '../../../API/API';
 import Axios from 'axios';
 
@@ -13,6 +14,7 @@ export function fetchContactsActionCreator(){
       .catch(error => {
         console.log(error)
         dispatch(fetchContactsFailure(error))
+        dispatch(sendNotification('error', 'Failed to fetch contacts!'))
       })
   }
 }

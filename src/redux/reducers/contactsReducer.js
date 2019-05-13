@@ -6,7 +6,6 @@ export default function contactsReducer(state=initialState.contacts, action){
   switch(action.type){
     //fetch contact reducers
     case actionTypes.FETCH_CONTACTS_BEGIN:{
-      console.log('contact fetch begins')
       return {
         ...state, 
         isFetching: true,
