@@ -2,6 +2,7 @@ const initialState = {
   contacts: {
     isFetching: false,
     errorFetching: null,
+    isAddingContact: false,
     contactList: [],
     newContact: {
       name: "",

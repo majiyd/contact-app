@@ -22,6 +22,6 @@ export function fetchContactsActionCreator(){
 
 export function addContactActionCreator({name, number}){
   return dispatch => {
-    
+    dispatch()
   }
 }

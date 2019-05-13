@@ -26,6 +26,24 @@ export default function contactsReducer(state=initialState.contacts, action){
         errorFetching: action.payload
       }
     }
+
+    //add contact reducers
+    case actionTypes.ADD_CONTACT_BEGIN:{
+      return{
+        ...state, isAddingContact: true
+      }
+    }
+    case actionTypes.ADD_CONTACT_SUCCESS:{
+      return{
+        ...state, isAddingContact: false
+      }
+    }
+    case actionTypes.ADD_CONTACT_FAILURE:{
+      return{
+        ...state, isAddingContact: false
+      }
+    }
+
     case actionTypes.ADD_NEW_CONTACT:{
       let newContact = {
         name: action.payload.name,

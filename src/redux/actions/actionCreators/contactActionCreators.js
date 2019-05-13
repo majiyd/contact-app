@@ -46,3 +46,16 @@ export function fetchContactsFailure(error){
     payload: error,
   }
 }
+
+//add contact action creators
+export function addContactBegin() {
+  return{
+    type: actionTypes.ADD_CONTACT_BEGIN
+  }
+}
+export function addContactSuccess() {
+  
+}
+export function addContactFailure() {
+  
+}
