@@ -1,4 +1,4 @@
-import { fetchContactsBegin, fetchContactsSuccess, fetchContactsFailure } from "./contactActionCreators";
+import { fetchContactsBegin, fetchContactsSuccess, fetchContactsFailure, addContactBegin } from "./contactActionCreators";
 import {sendNotification} from './uiActionCreators'
 import * as api from '../../../API/API';
 import Axios from 'axios';
@@ -22,6 +22,6 @@ export function fetchContactsActionCreator(){
 
 export function addContactActionCreator({name, number}){
   return dispatch => {
-    dispatch()
+    dispatch(addContactBegin())
   }
 }

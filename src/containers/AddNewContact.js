@@ -1,11 +1,8 @@
 import React, { PureComponent } from 'react';
 import {connect} from 'react-redux'
-import {
-  inputContactName,
-  inputContactNumber,
-  addNewContact
-} from "../redux/actions/actionCreators/contactActionCreators";
-import {sendNotification} from "../redux/actions/actionCreators/uiActionCreators";
+import {inputContactName, inputContactNumber} from "../redux/actions/actionCreators/contactActionCreators";
+import {addContactActionCreator} from '../redux/actions/actionCreators/thunkActionCreators';
+import Loader from "../components/Loader";
 import textStyles from '../css/components/Text.module.css'
 import formStyles from '../css/components/Form.module.css'
 import buttonStyles from '../css/components/Button.module.css'
@@ -14,13 +11,13 @@ function mapStateToProps(state){
   return{
     newContactName: state.contacts.newContact.name,
     newContactNumber: state.contacts.newContact.phoneNumber,
+    isAddingContact: state.contacts.isAddingContact
   }
 }
 const mapDispatchToProps = {
   inputContactName,
   inputContactNumber,
-  addNewContact,
-  sendNotification,
+  addContactActionCreator,
 }
 class AddNewContact extends PureComponent {
   handleInputContactName = (e) => {
@@ -43,8 +40,8 @@ class AddNewContact extends PureComponent {
       document.getElementById('inputContactName').value = ''
     }else{
       e.preventDefault()
-      this.props.addNewContact(newContactName, newContactNumber)
-      this.props.sendNotification('success', `Contact ${newContactName} successfully added!`)
+      // this.props.addNewContact(newContactName, newContactNumber)
+      this.props.addContactActionCreator({newContactName, newContactNumber})
       document.getElementById('inputContactName').value = ''
       document.getElementById('inputContactNumber').value = ''
     }
@@ -75,7 +72,9 @@ class AddNewContact extends PureComponent {
             required
             onInput={this.handleInputContactNumber}
           />
-          <button onClick={this.handleAddNewContact} className={buttonStyles.form_button}>Add Contact</button>
+          <button onClick={this.handleAddNewContact} className={buttonStyles.form_button}>
+            {this.props.isAddingContact ? <Loader type='small' /> : 'Add Contact'}
+          </button>
         </form>
       </React.Fragment>
     );

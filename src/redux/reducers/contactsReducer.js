@@ -29,6 +29,7 @@ export default function contactsReducer(state=initialState.contacts, action){
 
     //add contact reducers
     case actionTypes.ADD_CONTACT_BEGIN:{
+      console.log('adding contact')
       return{
         ...state, isAddingContact: true
       }
