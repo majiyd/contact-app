@@ -1,6 +1,5 @@
 import initialState from '../initialState/initialState'
 import * as actionTypes from "../actions/actionTypes";
-import uniqid from 'uniqid'
 
 export default function contactsReducer(state=initialState.contacts, action){
   switch(action.type){
@@ -31,7 +30,7 @@ export default function contactsReducer(state=initialState.contacts, action){
       let newContact = {
         name: action.payload.name,
         phoneNumber: action.payload.number,
-        id: uniqid('contact-')
+        id: action.payload.id
       }
       return {
         ...state, contactList: [...state.contactList, newContact]

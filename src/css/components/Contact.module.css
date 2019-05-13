@@ -10,7 +10,9 @@
   border-right: 2px solid #b47cc4;
   box-shadow: 0px 1px 4px #6b358f93;
 }
-
+.contact:last-child{
+  margin-bottom: 40px;
+}
 .delete_contact{
   position: relative;
   margin: auto 7px auto 0px;

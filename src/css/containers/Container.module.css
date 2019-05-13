@@ -5,7 +5,7 @@
   padding: 3%;
   padding-bottom: 40px;
   background-color: #070605a6;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 3px 0 rgba(140, 119, 191, 0.19);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 13px 5px rgba(17, 11, 13, 0.19);
 }
 
 @media (min-width: 1023px){

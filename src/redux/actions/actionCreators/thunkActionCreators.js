@@ -2,6 +2,7 @@ import { fetchContactsBegin, fetchContactsSuccess, fetchContactsFailure } from "
 import {sendNotification} from './uiActionCreators'
 import * as api from '../../../API/API';
 import Axios from 'axios';
+import uniqid from 'uniqid'
 
 export function fetchContactsActionCreator(){
   return dispatch => {
@@ -16,5 +17,11 @@ export function fetchContactsActionCreator(){
         dispatch(fetchContactsFailure(error))
         dispatch(sendNotification('error', 'Failed to fetch contacts!'))
       })
+  }
+}
+
+export function addContactActionCreator({name, number}){
+  return dispatch => {
+    
   }
 }
