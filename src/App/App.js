@@ -19,9 +19,11 @@ function mapStateToProps(state){
  * @desc main App, all application pages are rendered here
  */
 class App extends Component {
+
   componentDidMount(){
     store.dispatch(fetchContactsActionCreator())
   }
+
   render() {
     return (
       <React.Fragment>
@@ -37,4 +39,5 @@ class App extends Component {
     );
   }
 }
+
 export default connect(mapStateToProps)(App);

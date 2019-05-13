@@ -14,7 +14,7 @@ export default function contactsReducer(state=initialState.contacts, action){
       }
     }
     case actionTypes.FETCH_CONTACTS_SUCCESS:{
-      console.log('contact fetch success')
+      console.log('contact fetch success', action.payload)
       return {
         ...state,
         isFetching: false,
@@ -23,7 +23,7 @@ export default function contactsReducer(state=initialState.contacts, action){
       }
     }
     case actionTypes.FETCH_CONTACTS_FAILURE:{
-      console.log('contact fetch failure')
+      console.log('contact fetch failure', action.payload)
       return {
         ...state,
         isFetching: false,
