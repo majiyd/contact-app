@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux'
+import store from '../redux/store'
+import {fetchContactsActionCreator} from '../redux/actions/actionCreators/thunkActionCreators'
 import Container from '../containers/Container'
 import ContactsPage from '../containers/ContactsPage';
 import AddNewContact from '../containers/AddNewContact';
@@ -17,6 +19,9 @@ function mapStateToProps(state){
  * @desc main App, all application pages are rendered here
  */
 class App extends Component {
+  componentDidMount(){
+    store.dispatch(fetchContactsActionCreator())
+  }
   render() {
     return (
       <React.Fragment>

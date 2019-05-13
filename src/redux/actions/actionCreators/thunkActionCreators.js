@@ -1,11 +1,12 @@
 import { fetchContactsBegin, fetchContactsSuccess, fetchContactsFailure } from "./contactActionCreators";
+import * as api from '../../../API/API';
 import Axios from 'axios';
 
 export function fetchContactsActionCreator(){
   return dispatch => {
     dispatch(fetchContactsBegin())
     
-    return Axios.get('https://my-json-server.typicode.com/majiyd/json-server/contacts/')
+    return Axios.get(api.FETCH_CONTACTS)
       .then(response => {
         dispatch(fetchContactsSuccess(response.data))
       })
