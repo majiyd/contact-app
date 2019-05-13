@@ -4,15 +4,17 @@ import uniqid from 'uniqid'
 
 export default function contactsReducer(state=initialState.contacts, action){
   switch(action.type){
+    //fetch contact reducers
     case actionTypes.FETCH_CONTACTS_BEGIN:{
+      console.log('contact fetch begins')
       return {
         ...state, 
         isFetching: true,
         errorFetching: null
       }
     }
-    //fetch contact reducers
     case actionTypes.FETCH_CONTACTS_SUCCESS:{
+      console.log('contact fetch success')
       return {
         ...state,
         isFetching: false,
@@ -21,6 +23,7 @@ export default function contactsReducer(state=initialState.contacts, action){
       }
     }
     case actionTypes.FETCH_CONTACTS_FAILURE:{
+      console.log('contact fetch failure')
       return {
         ...state,
         isFetching: false,
