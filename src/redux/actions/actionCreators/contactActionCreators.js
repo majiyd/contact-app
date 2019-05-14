@@ -53,9 +53,18 @@ export function addContactBegin() {
     type: actionTypes.ADD_CONTACT_BEGIN
   }
 }
-export function addContactSuccess() {
-  
+export function addContactSuccess(name, number) {
+  return{
+    type: actionTypes.ADD_CONTACT_SUCCESS,
+    payload:{
+      name,
+      number
+    }
+  }
 }
-export function addContactFailure() {
-  
+export function addContactFailure(error) {
+  return{
+    type: actionTypes.ADD_CONTACT_FAILURE,
+    payload: error
+  }
 }

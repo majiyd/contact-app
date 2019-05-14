@@ -39,7 +39,7 @@ class ContactsPage extends PureComponent {
               key={contact.id}
               id={contact.id}
               name={contact.name}
-              number={contact.number}
+              number={contact.phoneNumber}
             />
           ))
         )}

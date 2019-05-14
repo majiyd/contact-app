@@ -1,4 +1,4 @@
-import { fetchContactsBegin, fetchContactsSuccess, fetchContactsFailure, addContactBegin } from "./contactActionCreators";
+import { fetchContactsBegin, fetchContactsSuccess, fetchContactsFailure, addContactBegin, addContactSuccess, addContactFailure } from "./contactActionCreators";
 import {sendNotification} from './uiActionCreators'
 import * as api from '../../../API/API';
 import Axios from 'axios';
@@ -20,8 +20,20 @@ export function fetchContactsActionCreator(){
   }
 }
 
-export function addContactActionCreator({name, number}){
+export function addContactActionCreator(name, number){
   return dispatch => {
     dispatch(addContactBegin())
+
+    return Axios.post(api.FETCH_CONTACTS,{
+      name: name,
+      phoneNumber: number,
+    })
+      .then(response => {
+        dispatch(addContactSuccess(name, number))
+      })
+      .catch(error => {
+        dispatch(addContactFailure())
+        dispatch(sendNotification('error', `Failed to add contact ${name}`))
+      })
   }
 }

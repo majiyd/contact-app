@@ -35,6 +35,7 @@ export default function contactsReducer(state=initialState.contacts, action){
       }
     }
     case actionTypes.ADD_CONTACT_SUCCESS:{
+      console.log('successful', action.payload)
       return{
         ...state, isAddingContact: false
       }
