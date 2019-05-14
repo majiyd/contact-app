@@ -12,15 +12,7 @@ export function inputContactNumber(value){
     payload: value
   }
 }
-export function addNewContact(name, number){
-  return{
-    type: actionTypes.ADD_NEW_CONTACT,
-    payload: {
-      name: name,
-      number: number,
-    }
-  }
-}
+
 export function deleteContact(id){
   return{
     type: actionTypes.DELETE_CONTACT,
@@ -53,18 +45,13 @@ export function addContactBegin() {
     type: actionTypes.ADD_CONTACT_BEGIN
   }
 }
-export function addContactSuccess(name, number) {
+export function addContactSuccess() {
   return{
     type: actionTypes.ADD_CONTACT_SUCCESS,
-    payload:{
-      name,
-      number
-    }
   }
 }
-export function addContactFailure(error) {
+export function addContactFailure() {
   return{
     type: actionTypes.ADD_CONTACT_FAILURE,
-    payload: error
   }
 }

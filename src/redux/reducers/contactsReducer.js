@@ -29,13 +29,11 @@ export default function contactsReducer(state=initialState.contacts, action){
 
     //add contact reducers
     case actionTypes.ADD_CONTACT_BEGIN:{
-      console.log('adding contact')
       return{
         ...state, isAddingContact: true
       }
     }
     case actionTypes.ADD_CONTACT_SUCCESS:{
-      console.log('successful', action.payload)
       return{
         ...state, isAddingContact: false
       }
@@ -46,16 +44,6 @@ export default function contactsReducer(state=initialState.contacts, action){
       }
     }
 
-    case actionTypes.ADD_NEW_CONTACT:{
-      let newContact = {
-        name: action.payload.name,
-        phoneNumber: action.payload.number,
-        id: action.payload.id
-      }
-      return {
-        ...state, contactList: [...state.contactList, newContact]
-      }
-    }
     case actionTypes.DELETE_CONTACT:{
       let newContactList = state.contactList.filter(
         contact => contact.id !== action.payload

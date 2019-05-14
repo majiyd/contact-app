@@ -2,7 +2,6 @@ import { fetchContactsBegin, fetchContactsSuccess, fetchContactsFailure, addCont
 import {sendNotification} from './uiActionCreators'
 import * as api from '../../../API/API';
 import Axios from 'axios';
-import uniqid from 'uniqid'
 
 export function fetchContactsActionCreator(){
   return dispatch => {
@@ -29,10 +28,14 @@ export function addContactActionCreator(name, number){
       phoneNumber: number,
     })
       .then(response => {
-        dispatch(addContactSuccess(name, number))
+        dispatch(sendNotification('success',  `${name} added to contacts!`))
+        dispatch(fetchContactsActionCreator())
+        dispatch(addContactSuccess())
+        
       })
       .catch(error => {
         dispatch(addContactFailure())
+        console.log(error);
         dispatch(sendNotification('error', `Failed to add contact ${name}`))
       })
   }
