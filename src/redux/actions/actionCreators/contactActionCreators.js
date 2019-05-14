@@ -13,13 +13,6 @@ export function inputContactNumber(value){
   }
 }
 
-export function deleteContact(id){
-  return{
-    type: actionTypes.DELETE_CONTACT,
-    payload: id,
-  }
-}
-
 //fetch contacts action creators
 export function fetchContactsBegin(){
   return{
@@ -53,5 +46,24 @@ export function addContactSuccess() {
 export function addContactFailure() {
   return{
     type: actionTypes.ADD_CONTACT_FAILURE,
+  }
+}
+
+export function deleteContactBegin(id) {
+  return{
+    type: actionTypes.DELETE_CONTACT_BEGIN,
+    payload: id
+  }
+}
+export function deleteContactSuccess(id) {
+  return{
+    type: actionTypes.DELETE_CONTACT_SUCCESS,
+    payload: id
+  }
+}
+export function deleteContactFailure(id) {
+  return{
+    type: actionTypes.DELETE_CONTACT_FAILURE,
+    payload: id
   }
 }

@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import {connect} from 'react-redux';
-import {deleteContact} from "../redux/actions/actionCreators/contactActionCreators";
 import styles from '../css/components/Contact.module.css'
 
 function mapStateToProps(state){
@@ -10,7 +9,6 @@ function mapStateToProps(state){
 }
 
 const mapDispatchToProps = {
-  deleteContact
 }
 
 class DeleteContact extends PureComponent {

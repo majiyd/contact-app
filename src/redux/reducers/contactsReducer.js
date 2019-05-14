@@ -44,14 +44,14 @@ export default function contactsReducer(state=initialState.contacts, action){
       }
     }
 
-    case actionTypes.DELETE_CONTACT:{
-      let newContactList = state.contactList.filter(
-        contact => contact.id !== action.payload
-      )
-      return{
-        ...state, contactList: newContactList,
-      }
-    }
+    // case actionTypes.DELETE_CONTACT:{
+    //   let newContactList = state.contactList.filter(
+    //     contact => contact.id !== action.payload
+    //   )
+    //   return{
+    //     ...state, contactList: newContactList,
+    //   }
+    // }
     case actionTypes.INPUT_CONTACT_NAME:{
       return {
         ...state, newContact:{
