@@ -1,4 +1,12 @@
-import { fetchContactsBegin, fetchContactsSuccess, fetchContactsFailure, addContactBegin, addContactSuccess, addContactFailure } from "./contactActionCreators";
+import {
+  fetchContactsBegin,
+  fetchContactsSuccess,
+  fetchContactsFailure,
+  addContactBegin,
+  addContactSuccess,
+  addContactFailure,
+  deleteContactBegin
+} from "./contactActionCreators";
 import {sendNotification} from './uiActionCreators'
 import * as api from '../../../API/API';
 import Axios from 'axios';
@@ -38,5 +46,21 @@ export function addContactActionCreator(name, number){
         console.log(error);
         dispatch(sendNotification('error', `Failed to add contact ${name}`))
       })
+  }
+}
+
+export function deleteContact(id) {
+  return (dispatch, getState) => {
+    // state.contactList.map((contact) => (contact.id === action.payload ? (console.log(contact)) : null))
+    let contactToDelete = getState().contacts.contactList.filter(contact => (
+      contact.id === id
+    )) 
+    
+    if (contactToDelete[0].isDeleting === true){
+      console.log('deleting already')
+      return
+    }
+    dispatch(deleteContactBegin(id))
+    
   }
 }
