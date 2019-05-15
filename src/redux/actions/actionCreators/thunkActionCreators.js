@@ -5,7 +5,9 @@ import {
   addContactBegin,
   addContactSuccess,
   addContactFailure,
-  deleteContactBegin
+  deleteContactBegin,
+  deleteContactSuccess,
+  deleteContactFailure
 } from "./contactActionCreators";
 import {sendNotification} from './uiActionCreators'
 import * as api from '../../../API/API';
@@ -61,6 +63,16 @@ export function deleteContact(id) {
       return
     }
     dispatch(deleteContactBegin(id))
-    
+
+    Axios.delete(`${api.FETCH_CONTACTS}/${id}`)
+      .then(response => {
+        dispatch(deleteContactSuccess(id))
+        dispatch(sendNotification('success', `Deleted ${contactToDelete[0].name} successfully`))
+      })
+      .catch(error => {
+        console.log(error)
+        dispatch(deleteContactFailure(id))
+        dispatch(sendNotification('error', `Failed to delete ${contactToDelete[0].name}`))
+      })
   }
 }

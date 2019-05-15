@@ -44,20 +44,33 @@ export default function contactsReducer(state=initialState.contacts, action){
       }
     }
 
-    // case actionTypes.DELETE_CONTACT:{
-    //   let newContactList = state.contactList.filter(
-    //     contact => contact.id !== action.payload
-    //   )
-    //   return{
-    //     ...state, contactList: newContactList,
-    //   }
-    // }
     case actionTypes.DELETE_CONTACT_BEGIN:{
-      console.log('started deleting contact', action.payload)
-      
       const newContactList = state.contactList.map(contact =>{
         if (contact.id === action.payload){
           const newContact = {...contact, isDeleting: true}
+          return newContact
+        }else{
+          return contact
+        }
+        
+      })
+      return{
+        ...state, 
+        contactList: newContactList
+      }
+    }
+    case actionTypes.DELETE_CONTACT_SUCCESS:{
+      let newContactList = state.contactList.filter(
+        contact => contact.id !== action.payload
+      )
+      return{
+        ...state, contactList: newContactList,
+      }
+    }
+    case actionTypes.DELETE_CONTACT_FAILURE:{
+      const newContactList = state.contactList.map(contact =>{
+        if (contact.id === action.payload){
+          const newContact = {...contact, isDeleting: false}
           return newContact
         }else{
           return contact
