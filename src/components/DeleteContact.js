@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react';
 import {connect} from 'react-redux';
 import {deleteContact} from '../redux/actions/actionCreators/thunkActionCreators'
+import Loader from './Loader'
 import styles from '../css/components/Contact.module.css'
 
 function mapStateToProps(state){
   return{
-
+    
   }
 }
 
@@ -23,7 +24,7 @@ class DeleteContact extends PureComponent {
         className={styles.delete_contact}
         onClick={this.deleteContact}
       >
-        X
+        {this.props.isDeleting ? <Loader type="small"/> : "X"}
       </div>
     );
   }

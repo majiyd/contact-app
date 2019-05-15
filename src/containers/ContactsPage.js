@@ -40,6 +40,7 @@ class ContactsPage extends PureComponent {
               id={contact.id}
               name={contact.name}
               number={contact.phoneNumber}
+              isDeleting={contact.isDeleting}
             />
           ))
         )}

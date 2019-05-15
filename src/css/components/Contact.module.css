@@ -20,6 +20,10 @@
   padding: 2px 8px;
   background: linear-gradient(135deg, #f20c46, #db3800);
   font-family: 'Courier New', Courier, monospace;
+  width: 28px;
+  min-height: 28px;
+  display: flex;
+  justify-content: center;
 }
 .delete_contact:before{
   content:"";

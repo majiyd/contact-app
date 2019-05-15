@@ -10,6 +10,7 @@
 }
 .loader_small {
   composes: loader;
+  margin: auto;
 }
 .bouncing_dot{
   border-radius: 50%;

@@ -6,7 +6,7 @@ class Contact extends PureComponent {
   render() {
     return (
       <div className={styles.contact}>
-        <DeleteContact id={this.props.id}/>
+        <DeleteContact id={this.props.id} isDeleting={this.props.isDeleting}/>
         <div style={{ 
             margin: "auto 0", 
             textTransform: "capitalize" 
