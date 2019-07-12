@@ -2,18 +2,16 @@ In this simple project, i'll be improving on my k
 nowledge of Redux. I'll make a simple contact list app.<br>
   
 I'll be making use of
-1. React
-2. Redux
-3. Css Modules
-4. [Mockapi.io](https://www.mockapi.io) - used to fake real lifeAPI
+1. [React](https://github.com/facebook/create-react-app)
+2. [Redux](https://github.com/reduxjs/redux)
+3. [Css Modules](https://github.com/css-modules/css-modules)
+4. [Mockapi.io](https://www.mockapi.io) - to fake a real life API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-To get the code, clone the repo <br>
+Click [here](https://majiyd.github.io/contact-app/) to view live demo in your browser or run locally on your system by cloning the repo <br>
 ```
 git clone https://github.com/majiyd/contact-app.git
 ```
-then run  
+then running 
 ```
 npm install
 ```
